@@ -11,6 +11,7 @@ class User {
     password: string;
     birthDate: Date;
     type: string; //pesquisar enum typeorm
+
 }
 
 export { User };
