@@ -1,4 +1,4 @@
-import { User } from "../../model/User";
+import { User, typeUser } from "../../model/User";
 import { ICreateUserDTO, IUserRepository } from "../IUserRepository";
 
 
@@ -20,7 +20,7 @@ class UserRepository implements IUserRepository {
         return UserRepository.INSTANCE;
     }
 
-    create({ name, nacionality, state, RG, cpf, email, password, birthDate }: ICreateUserDTO): User {
+    create({ name, nacionality, state, RG, cpf, email, password, birthDate, typeUser }: ICreateUserDTO): User {
         let user = new User;
         Object.assign(user, {
             name,
@@ -31,6 +31,7 @@ class UserRepository implements IUserRepository {
             email,
             password,
             birthDate,
+            typeUser,
         })
         
         this.users.push(user);

@@ -1,4 +1,8 @@
 
+enum typeUser {
+    director = 'director',
+    student = 'student'
+}
 
 
 class User {
@@ -10,8 +14,8 @@ class User {
     email: string;
     password: string;
     birthDate: Date;
-    type: string; //pesquisar enum typeorm
+    typeUser: typeUser;  //pesquisar enum typeorm
 
 }
 
-export { User };
+export { User, typeUser };

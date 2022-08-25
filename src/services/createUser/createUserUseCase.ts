@@ -1,5 +1,10 @@
-import { User } from "../../model/User";
+import { typeUser, User } from "../../model/User";
 import { UserRepository } from "../../repositories/implementation/UserRepository";
+
+enum type {
+    director,
+    student
+} 
 
 interface IRequest {
     name: string;
@@ -10,9 +15,7 @@ interface IRequest {
     email: string;
     password: string;
     birthDate: Date;
-    type: {
-        enum: ["director", "student"]; //COMPLETAR!!!!!!!!!!!!!!!!!!!!
-    }; //pesquisar enum typeorm
+    typeUser: typeUser//pesquisar enum typeorm
 
 } 
 
