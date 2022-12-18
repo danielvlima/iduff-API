@@ -1,0 +1,13 @@
+usuario: id:pk, nome, nacionalidade, estado, rg, cpf, email, senha, data_nascimento, id_tipo_usuario:fk;
+tipo_usuario: id:pk , tipo_usuario;
+usuario_curso: id:pk, id_usuario:fk, id_curso:fk; 
+curso:id:pk, nome_curso, id_departamento:fk;
+periodo_letivo: id:pk, ano, semestre, id_status:fk, id_materias:fk;
+status: id:pk, tipo_status;
+departamento:id:pk, codigo, nome, area_conhecimento, campus_sede, id_coordenador:fk;
+professores_departamento:id:pk, id_departamento:fk, id_professor:fk, id_professor_materia:fk;
+professor_materia: id:pk, id_materia:fk, id_professor:fk; 
+materia: id:pk, nome, carga_horaria, area_conhecimento, curso:fk;
+pre_requisito: id:pk, id_materia:fk, id_materia_pre:fk;
+turma: id:pk, nome, codigo, calendario, numero_vagas, sala, id_professor:fk, id_alunos_turma:fk;
+alunos_turma: id:pk, id_aluno:fk, id_turma:fk, nota;
